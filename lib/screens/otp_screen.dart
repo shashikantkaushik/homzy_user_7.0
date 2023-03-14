@@ -26,11 +26,13 @@ class _OtpScreenState extends State<OtpScreen> {
       body: SingleChildScrollView(
         child: SafeArea(
           child: isLoading == true
-              ? const Center(
-                  child: CircularProgressIndicator(
-                    color: Colors.purple,
+              ? SingleChildScrollView(
+                child: const Center(
+                    child: CircularProgressIndicator(
+                      color: Colors.purple,
+                    ),
                   ),
-                )
+              )
               : Center(
                   child: Padding(
                     padding:
@@ -123,12 +125,17 @@ class _OtpScreenState extends State<OtpScreen> {
                           ),
                         ),
                         const SizedBox(height: 15),
-                        const Text(
-                          "Resend New Code",
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.purple,
+                        GestureDetector(
+                          onTap:(){
+
+                          },
+                          child: const Text(
+                            "Resend New Code",
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.purple,
+                            ),
                           ),
                         ),
                       ],
